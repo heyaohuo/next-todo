@@ -13,6 +13,7 @@ const Header = () => {
             <Link className="hidden lg:block" href="/products">产品</Link>
             <Link className="hidden lg:block" href="/pricing">价格</Link>
             <Link className="hidden lg:block" href="/dashboard">教程</Link>
+            <Link className="hidden lg:block" href="/help">帮助</Link>
         </div>
         <div>
         <Link className="" href="/manager">
