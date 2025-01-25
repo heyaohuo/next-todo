@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <div className="mr-auto ml-auto px-[50px]">
           <div className="">
               <Header />
-            </div>
+          </div>
           <div className=" mt-2">
             {children}
           </div>

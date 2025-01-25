@@ -8,7 +8,7 @@ const Header = () => {
     <div className="flex items-center justify-between px-4 py-3 gap-4">
         <div className="flex items-center gap-x-[20px]">
             <Link href="/">
-              <Image src="/imgs/modal.jpg" style={{width:'auto', height:'auto'}} priority={false} width={40} height={40} className="rounded-full" alt="s" />
+              <Image src="/imgs/modal.jpg" style={{width:40, height:40}} priority={false} width={40} height={40} className="rounded-full" alt="s" />
             </Link>
             <Link className="hidden lg:block" href="/products">产品</Link>
             <Link className="hidden lg:block" href="/pricing">价格</Link>
