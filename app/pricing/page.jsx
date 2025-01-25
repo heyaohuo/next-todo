@@ -1,8 +1,32 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect } from 'react'
+
+
 
 const page = () => {
+
+  useEffect(()=>{
+    const url = "https://heyaoyue.app.n8n.cloud/webhook-test/fd2cf024-7dd4-49be-b801-c5edd6e49634/pase/5";
+    const test = async() =>{
+      try {
+        const response = await fetch(url,
+          {
+          "mode":"cors"
+        }
+      );
+        // console.log(response)
+        const contentType = response.headers.get('content-type');
+        console.log(contentType)
+        const js = await response.json();
+        console.log(js);
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    test();
+  },[])
+
   return (
     <div className="grid gap-y-3">
       <div className=" bg-slate-100 flex justify-center items-center h-[250px]">
