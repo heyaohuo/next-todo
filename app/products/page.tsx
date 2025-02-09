@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 
-const page = () => {
+const Page: React.FC = () => {
   return (
     <div className="grid gap-y-3">
       <div className=" bg-slate-100 flex justify-center items-center h-[250px]">
@@ -23,4 +23,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page 

@@ -1,7 +1,4 @@
-
-
-
-const page = () => {
+const Page: React.FC = () => {
   return (
     <div className="grid gap-y-2">
       <div className=" bg-slate-100 flex justify-center items-center h-[350px]">
@@ -22,11 +19,8 @@ const page = () => {
       <div className=" bg-slate-100 flex justify-center items-center h-[350px]">
         <h3>CardF——加入群聊+获取</h3>
       </div>
-      <div className=" bg-slate-100 flex justify-center items-center h-[350px]">
-        <h3>CardF——Footer</h3>
-      </div>
     </div>
   )
 }
 
-export default page
+export default Page 

@@ -1,22 +1,16 @@
-
-"use client"
 import React from 'react'
 
-const page = () => {
+const Page: React.FC = () => {
   return (
     <div className="grid gap-y-3">
       <div className=" bg-slate-100 flex justify-center items-center h-[250px]">
-        <h3>CardA——抖音界面</h3>
+        <h3>CardA——简要说明服务范围</h3>
       </div>
       <div className=" bg-slate-100 flex justify-center items-center h-[250px]">
-        <h3>CardA——B站</h3>
+        <h3>CardA——联系方式</h3>
       </div>
-      <div className=" bg-slate-100 flex justify-center items-center h-[250px]">
-        <h3>CardA——油管</h3>
-      </div>
-
     </div>
   )
 }
 
-export default page
+export default Page 
