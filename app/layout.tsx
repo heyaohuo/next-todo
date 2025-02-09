@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css";
 
 export const metadata = {
@@ -10,14 +11,23 @@ export const metadata = {
 // headers
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+
+
   return (
-    <html lang="zh">
+    <html lang="zh" suppressHydrationWarning>
       <body className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-grow mt-[72px]">
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className="flex-grow mt-[72px]">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

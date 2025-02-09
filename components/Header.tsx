@@ -5,10 +5,12 @@ import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const isSticky = false; // Assuming isSticky is a state or a prop
 
   const navLinks = [
     { href: "/dashboard", label: "工作区" },
@@ -18,8 +20,10 @@ const Header: React.FC = () => {
     { href: "/help", label: "帮助" },
   ];
 
+  const headerClass = isSticky ? 'header sticky' : 'header';
+
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm z-50">
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-x-[20px]">
           <Link href="/">
@@ -38,8 +42,8 @@ const Header: React.FC = () => {
               <Link 
                 key={link.href}
                 href={link.href}
-                className={`hover:text-blue-600 transition-colors ${
-                  pathname === link.href ? "text-blue-600 font-medium" : ""
+                className={`text-foreground hover:text-primary transition-colors ${
+                  pathname === link.href ? "text-primary font-medium" : ""
                 }`}
               >
                 {link.label}
@@ -49,9 +53,10 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           <Link 
             href="/manager"
-            className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors"
+            className="bg-primary text-primary-foreground px-4 py-2 rounded-full hover:bg-primary/90 transition-colors"
           >
             免费尝试
           </Link>

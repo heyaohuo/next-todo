@@ -86,7 +86,55 @@ const config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+  		spacing: {
+  			'1': 'var(--spacing-1)',
+  			'2': 'var(--spacing-2)',
+  			'3': 'var(--spacing-3)',
+  			'4': 'var(--spacing-4)',
+  			'6': 'var(--spacing-6)',
+  			'8': 'var(--spacing-8)',
+  			'12': 'var(--spacing-12)',
+  			'16': 'var(--spacing-16)',
+  		},
+  		fontSize: {
+  			'xs': 'var(--font-size-xs)',
+  			'sm': 'var(--font-size-sm)',
+  			'base': 'var(--font-size-base)',
+  			'lg': 'var(--font-size-lg)',
+  			'xl': 'var(--font-size-xl)',
+  			'2xl': 'var(--font-size-2xl)',
+  			'3xl': 'var(--font-size-3xl)',
+  		},
+  		fontWeight: {
+  			normal: 'var(--font-weight-normal)',
+  			medium: 'var(--font-weight-medium)',
+  			semibold: 'var(--font-weight-semibold)',
+  			bold: 'var(--font-weight-bold)',
+  		},
+  		lineHeight: {
+  			tight: 'var(--line-height-tight)',
+  			normal: 'var(--line-height-normal)',
+  			relaxed: 'var(--line-height-relaxed)',
+  		},
+  		boxShadow: {
+  			sm: 'var(--shadow-sm)',
+  			md: 'var(--shadow-md)',
+  			lg: 'var(--shadow-lg)',
+  		},
+  		transitionDuration: {
+  			fast: 'var(--transition-fast)',
+  			normal: 'var(--transition-normal)',
+  			slow: 'var(--transition-slow)',
+  		},
+  		zIndex: {
+  			dropdown: 'var(--z-dropdown)',
+  			sticky: 'var(--z-sticky)',
+  			fixed: 'var(--z-fixed)',
+  			modal: 'var(--z-modal)',
+  			popover: 'var(--z-popover)',
+  			tooltip: 'var(--z-tooltip)',
+  		},
   	}
   },
   plugins: [require("tailwindcss-animate")],
