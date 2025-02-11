@@ -22,7 +22,7 @@ const BlogDetail: React.FC = () => {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 bg-background/80">
       <h1 className="text-2xl font-bold">{blog.title}</h1>
       <p className="mt-4">{blog.content}</p>
     </div>

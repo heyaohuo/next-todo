@@ -13,11 +13,11 @@ const Header: React.FC = () => {
   const isSticky = false; // Assuming isSticky is a state or a prop
 
   const navLinks = [
+    { href: "/core", label: "核心功能" },
     { href: "/dashboard", label: "工作区" },
     { href: "/products", label: "产品" },
     { href: "/pricing", label: "价格" },
     { href: "/blogs", label: "博客" },
-    { href: "/help", label: "帮助" },
   ];
 
   const headerClass = isSticky ? 'header sticky' : 'header';
@@ -73,15 +73,16 @@ const Header: React.FC = () => {
 
       {/* 移动端导航菜单 */}
       {isOpen && (
-        <div className="md:hidden px-4 py-2 bg-white border-t">
+        <div className="md:hidden px-4 py-2 border-t bg-background/80">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`block py-2 hover:text-blue-600 transition-colors ${
-                pathname === link.href ? "text-blue-600 font-medium" : ""
+              className={`block py-2 hover:text-primary/90 transition-colors ${
+                pathname === link.href ? "text-primary/90 font-medium" : ""
               }`}
               onClick={() => setIsOpen(false)}
+
             >
               {link.label}
             </Link>
