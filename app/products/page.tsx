@@ -19,11 +19,23 @@ export default function Page() {
 
   const fetchItems = async () => {
     try {
-      const res = await axios.get('/api/supabase');
-      setProducts(res.data);
+      
+      // 检查缓存是否存在
+      const cachedData = localStorage.getItem('productsCache');
+      const cacheTimestamp = localStorage.getItem('productsCacheTimestamp');
+      const now = new Date().getTime();
+      
+      // 如果缓存存在且未过期(24小时内)
+      if (cachedData && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 24 * 60 * 60 * 1000) {
+        setProducts(JSON.parse(cachedData));
+      } else {
+        // 如果没有缓存或缓存已过期,发送请求
+        const res = await axios.get('/api/supabase');
+        setProducts(res.data);
       // 存储数据到缓存
-      localStorage.setItem('productsCache', JSON.stringify(res.data));
-      localStorage.setItem('productsCacheTimestamp', new Date().getTime().toString());
+        localStorage.setItem('productsCache', JSON.stringify(res.data));
+        localStorage.setItem('productsCacheTimestamp', new Date().getTime().toString());
+      }
     } catch (err: any) {
       setError(err.message);
     } finally {
